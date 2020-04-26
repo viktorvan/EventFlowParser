@@ -17,10 +17,10 @@ Functions Consuming messages:       -> @topic f:{TheFunctionName}
 ## Generated code files
 #### Functions.cs
 
-A C# class with functions corresponding to the http endpoints and service bus triggers defined in the flow.
+A C# class with Azure Functions corresponding to the http endpoints and service bus triggers defined in the flow.
 
 #### generated.json
-Part of an arm-template with variables and resource for topics and subscrptions:
+Part of an arm-template with variables and resources for service bus topics and subscriptions:
 
 ## Usage
 
