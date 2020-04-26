@@ -2,7 +2,7 @@
 
 A project that parses Event Flow DSL to corresponding code files.
 
-## Notation
+## DSL Notation
 
 ```
 API endpoint:                       HTTP-METHOD /theEndpointName/{parameter}
@@ -14,6 +14,7 @@ Send message with fan-out:          => *[Message] @topic
 Functions Consuming messages:       -> @topic f:{TheFunctionName}
 ```
 
+## Generated code files
 #### Functions.cs
 
 A C# class with functions corresponding to the http endpoints and service bus triggers defined in the flow.
