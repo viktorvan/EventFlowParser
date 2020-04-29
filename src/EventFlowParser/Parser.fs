@@ -47,8 +47,9 @@ module Internal =
         pMethod .>> ws .>>. pUrl |>> fun (method, url) -> Endpoint.create method url
 
     let pSender : Parser<_> =
+        let optStr = str >> opt
         let pSendArrow = str "=>"
-        let pSenderVariable = (skipString "*" >>. ws >>. pIdentifier |>> ignore) <|> (skipString "*") .>> ws
+        let pSenderVariable = (skipString "*" >>. optStr "(" >>. ws >>. pIdentifier |>> ignore) <|> (skipString "*") .>> optStr ")" .>> ws
         let pSender' =
             pEventName .>> ws .>>. pTopic |>> (fun (e, t) -> { Event = e; Topic = t})
 
